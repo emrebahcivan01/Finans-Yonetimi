@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finans Yönetimi</title>
+</head>
+<body>
+    <h1>Finans Yönetimi</h1>
+    <p>Toplam Gelir: {{ total_income }}</p>
+    <p>Toplam Gider: {{ total_expense }}</p>
+    <p>Toplam Bakiye: {{ balance }}</p>
+
+    <h2>İşlemler</h2>
+    <table border="1">
+        <tr>
+            <th>Başlık</th>
+            <th>Tutar</th>
+            <th>Tarih</th>
+        </tr>
+        {% for transaction in transactions %}
+        <tr>
+            <td>{{ transaction.title }}</td>
+            <td>{{ transaction.amount }}</td>
+            <td>{{ transaction.date }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="/add">Yeni İşlem Ekle</a>
+</body>
+</html>
